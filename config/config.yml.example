@@ -1,0 +1,35 @@
+development: &DEFAULT
+	email:
+	    user: john.smith
+	    password: the_password
+	    recipient: destination.email
+
+	web:
+	    landing: http://www.example.org
+	    password_field: password_field= # = because the name of the field will end up being an assignment method
+	    user_field: user_field=
+	    username: your_username
+	    password: your_password
+	    court_type: badminton
+
+	db: 1
+
+production: 
+    <<: *DEFAULT
+	db: 3
+    
+test:
+    email:
+        user: john.smith
+        password: the_password
+        recipient: destination.email
+
+    web:
+        landing: http://www.example.org
+        password_field: password_field= # = because the name of the field will end up being an assignment method
+        user_field: user_field=
+        username: your_username
+        password: your_password
+        court_type: badminton
+	
+	db: 15

@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-GB">
+<head>
+	<title>example</title>
+</head>
+<body class="yui-skin-example"><div id="doc4" class="yui-t4">
+            <div id="hd">
+
+                <div class="yui-g">
+                    <div class="yui-u first" id="SiteLogo">
+<a href="/">example</a><span style="font-size:110%">?-?Online?Bookings</span>
+</div>
+                    <div class="yui-u" id="SiteTools">
+
+                        <p style="font-size:80%;line-height:1.5">example</p>
+
+                        <p style="font-size:80%;line-height:1.5;font-weight:bold"><a href="lfbook.asp?wci=Summary">0 Items in Basket</a></p>
+
+                        <p style="font-size:80%;line-height:1.5"><a href="lfBook.ASP?wci=bookenq">View Future Bookings</a></p>
+
+                        <p style="font-size:80%;line-height:1.5"><a href="lfBook.ASP?wci=login&amp;wce=logto&amp;URL=/">End Session</a></p>
+
+                    </div>
+                </div>
+                <div id="majorNav" class="yuimenubar yuimenubarnav">
+                    <div class="bd">
+                        <ul class="first-of-type">
+<li class="selected" id="majorNavItem1"><a class="yuimenubaritemlabel" href="http://www. example.org/">e</a></li>
+                        	<li class="yuimenubaritem" id="majorNavItem2"><a class="yuimenubaritemlabel" href="http://www. example.org/d.php">example</a></li>
+                         	<li class="yuimenubaritem" id="majorNavItem3"><a class="yuimenubaritemlabel" href="http://www. example.org/f.php">s</a></li>
+                         	<li class="yuimenubaritem" id="majorNavItem4"><a class="yuimenubaritemlabel" href="http://www. example.org/a.php">a</a></li>
+                         	<li class="yuimenubaritem" id="majorNavItem5"><a class="yuimenubaritemlabel" href="http://www. example.org/ms.php">c</a></li>
+                         	<li class="yuimenubaritem" id="majorNavItem6"><a class="yuimenubaritemlabel" href="http://www. example.org/o.php">t</a></li>
+                         	<li class="yuimenubaritem" id="majorNavItem7"><a class="yuimenubaritemlabel" href="http://www. example.org/my-example.php">my example</a></li>
+                        	<li class="yuimenubaritem" id="majorNavItem8"><a class="yuimenubaritemlabel" href="http://www. example.org/Contact.php">contact us</a></li>
+				<li class="yuimenubaritem" id="majorNavItem9"><a class="yuimenubaritemlabel" href="http://www. example.org/jobs.php">jobs</a></li>
+                        </ul>
+</div>
+                </div>
+            </div>
+            <div id="bd">
+                <div id="yui-main">
+                    <div class="yui-b">
+                        <div class="yui-g">
+
+                            <div id="BodyContent">
+
+                                <h1>Select Date &amp; Time</h1>
+
+                                <h2>Example</h2>
+
+                                <table class="fttable">
+<tr>
+<td class="fttopleft">Time</td>
+    <td class="ftcolhead">Friday<br>4 Dec</td>
+    <td class="ftcolhead">Saturday<br>5 Dec</td>
+    <td class="ftcolhead">Sunday<br>6 Dec</td>
+    <td class="ftcolhead">Monday<br>7 Dec</td>
+    <td class="ftcolhead">Tuesday<br>8 Dec</td>
+    <td class="ftcolhead">Wednesday<br>9 Dec</td>
+    <td class="ftcolhead">Thursday<br>10 Dec</td>
+    <td class="ftcolhead">Friday<br>11 Dec</td>
+  </tr>
+<tr>
+<td class="ftrowhead">7:00am</td>
+    <td class="ftdata">past</td>
+    <td class="ftblank">?</td>
+    <td class="ftblank">?</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=25200">2 Left</a> </td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=25200">1 Left</a> </td>
+  </tr>
+<tr>
+<td class="ftrowhead">8:00am</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15315&amp;ST=28800">1 Left</a> </td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15317&amp;ST=28800">1 Left</a> </td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=28800">2 Left</a> </td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=28800">1 Left</a> </td>
+  </tr>
+<tr>
+<td class="ftrowhead">9:00am</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=32400">2 Left</a> </td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">10:00am</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=36000">1 Left</a> </td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">11:00am</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15317&amp;ST=39600">1 Left</a> </td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">12:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15317&amp;ST=43200">3 Left</a> </td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15318&amp;ST=43200">1 Left</a> </td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">1:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15317&amp;ST=46800">3 Left</a> </td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=46800">1 Left</a> </td>
+  </tr>
+<tr>
+<td class="ftrowhead">2:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15317&amp;ST=50400">1 Left</a> </td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">3:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=54000">1 Left</a> </td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=54000">3 Left</a> </td>
+  </tr>
+<tr>
+<td class="ftrowhead">4:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">5:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">6:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">7:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+  </tr>
+<tr>
+<td class="ftrowhead">8:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=72000">3 Left</a> </td>
+  </tr>
+<tr>
+<td class="ftrowhead">9:00pm</td>
+    <td class="ftdata">past</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=75600">4 Left</a> </td>
+  </tr>
+<tr>
+<td class="ftrowhead">10:00pm</td>
+    <td class="ftblank">?</td>
+    <td class="ftblank">?</td>
+    <td class="ftblank">?</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">sold</td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15319&amp;ST=79200">1 Left</a> </td>
+    <td class="ftdata">
+<a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=79200">2 Left</a> </td>
+    <td class="ftblank">?</td>
+  </tr>
+</table>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="yui-b">
+
+                    <p style="text-align:center"><img src="/Assets/Images/Logos/example_180.jpg" width="180" height="41" alt="Example"></p>
+
+                    <p style="margin-top: 3em; text-align: center;"><a href="lfbook.asp?wci=Summary"><img src="images/basket.gif" width="100" height="40" border="0" alt="Click"><br>
+                    0 Items in Basket</a></p>
+                </div>
+            </div>
+            <div id="ft">
+                <div class="yui-gb">
+                    <div class="yui-u first">
+ 
+                        ? 2008 example
+
+                    </div>
+                    <div class="yui-u center">
+
+                        <a href="/corporate.php">Registered</a>
+
+                    </div>
+                    <div class="yui-u right">
+
+                        <a href="/website-disclaimer.php">disclaimer</a> <span class="btmNavSep">|</span> <a href="/example.php">privacy policy</a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div></body>
+</html>

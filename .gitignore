@@ -1,0 +1,9 @@
+config.yml
+.DS_Store
+*.log
+*.rdb
+personal_todo
+log/*
+bin/*
+vendor/gems/*
+!vendor/gems/cache/

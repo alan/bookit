@@ -1,0 +1,11 @@
+<h2>It seems you are lucky...</h2>
+New courts are available!
+
+<% new_slots.each do |day, slots| %>
+	<h3><%= day %></h3>
+	<ul>
+	<% slots.each do |slot| %>
+		<li><%= slot %></li>
+	<% end %>
+	</ul>
+<% end %>

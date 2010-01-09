@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+ROOT = File.expand_path(File.dirname(__FILE__) + '/../')
+
+require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'environment'))
+Bundler.require_env
+
+# require 'rubygems'
+require 'eventmachine'
+require 'time'
+require 'daemons'
+
+require "#{ROOT}/tennis-slots"
+include AutomateAT::Daemon
+
+Daemons.run_proc("courts", {:monitor => false, :dir_mode => :normal, :dir => "#{ROOT}/log",
+                            :multiple => false, :backtrace=>true}) do
+
+  EM.run{
+    start
+  }
+end
