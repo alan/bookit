@@ -1,5 +1,5 @@
-The app is web scrapper that extracts the free courts at my tennis club, and then sends me an email when new courts become available.
+The app is web scraper that extracts the free courts at my tennis club, and then sends me an email when new courts become available.
 
-The code might be useful to someone to see how I have tied together an evented script, Redis, web scrapping and sending emails with Ruby. Don't expect to run it as I have anonymised my personal details of the club!
+The code might be useful to someone to see how I have tied together an evented script, Redis, web scraping and sending emails with Ruby. Don't expect to run it as I have anonymised my personal details of the club!
 
 In the future I plan to create a Sinatra web app to display the current availability and have one-click bookings (the clubs website is slow and non-intuitive!)
