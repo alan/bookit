@@ -36,8 +36,8 @@ describe AutomateAT::MailMe do
         mailer = AutomateAT::MailMe.new({"Wednesday, 20 Nov" => ["9:00am"]})
         conf = mailer.email_configuration
         conf[:to].should == "destination.email"
-        conf[:smtp][:user] == "john.smith"
-        conf[:smtp][:password] == "the_password"
+        conf[:smtp][:user].should == "john.smith"
+        conf[:smtp][:password].should == "the_password"
       end
     end
     
