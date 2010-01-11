@@ -12,4 +12,4 @@ require 'logger'
 require File.expand_path(File.join(ROOT, 'lib', 'court_engine'))
 require File.expand_path(File.join(ROOT, 'lib', 'data_collector'))
 require File.expand_path(File.join(ROOT, 'lib', 'mail_me'))
-require File.expand_path(File.join(ROOT, 'lib', 'scrapper'))
+require File.expand_path(File.join(ROOT, 'lib', 'scraper'))

@@ -36,7 +36,7 @@ module AutomateAT
   def self.go
     begin
       raw_data = DataCollector.get_courts
-      scrapper = Scrapper.new(raw_data)
+      scrapper = Scraper.new(raw_data)
       new_courts = scrapper.get_available_courts
       @engine.save_courts(new_courts)
       mailer = MailMe.new(@engine.courts_to_notify)
