@@ -4,6 +4,7 @@ gem "pony"
 gem "daemons"
 gem "eventmachine"
 gem "rspec"
+gem "bluepill"
 
 source "http://gemcutter.org"
 bundle_path "vendor/gems"
