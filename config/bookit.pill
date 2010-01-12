@@ -1,0 +1,14 @@
+ROOT = File.dirname(__FILE__) + '/../'
+
+Bluepill.application("bookit") do |app|
+  app.process("backend_app") do |process|
+    process.working_dir = ROOT
+    
+    process.start_command = ROOT + "script/courts_ctl start"
+    process.stop_command = ROOT + "script/courts_ctl stop"
+    
+    process.pid_file = ROOT + "log/courts.pid"
+    
+    process.checks :mem_usage, :every => 10.seconds, :below => 5.megabytes, :times => [3,5]
+  end
+end
