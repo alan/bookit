@@ -17,6 +17,15 @@ development: &DEFAULT
 production: 
     <<: *DEFAULT
 	db: 3
+	
+    wanted_times:
+        monday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        tuesday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        wednesday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        thursday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        friday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        saturday: 11:00am, 12:00pm, 1:00pm, 2:00pm, 3:00pm, 4:00pm, 5:00pm, 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        sunday: 11:00am, 12:00pm, 1:00pm, 2:00pm, 3:00pm, 4:00pm, 5:00pm, 6:00pm, 7:00pm, 8:00pm, 9:00pm
     
 test:
     email:
@@ -33,3 +42,12 @@ test:
         court_type: badminton
 	
 	db: 15
+	
+	wanted_times:
+        monday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        tuesday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        wednesday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        thursday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        friday: 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        saturday: 11:00am, 12:00pm, 1:00pm, 2:00pm, 3:00pm, 4:00pm, 5:00pm, 6:00pm, 7:00pm, 8:00pm, 9:00pm
+        sunday: 11:00am, 12:00pm, 1:00pm, 2:00pm, 3:00pm, 4:00pm, 5:00pm, 6:00pm, 7:00pm, 8:00pm, 9:00pm
