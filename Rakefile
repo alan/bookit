@@ -4,7 +4,7 @@ require 'spec/rake/spectask'
 
 begin
   # TODO Need a better way for this
-  require File.expand_path(File.join(File.dirname(__FILE__), 'vendor', 'gems', 'gems', 'redis-0.1', 'tasks', 'redis.tasks.rb'))
+  require File.expand_path(File.join(File.dirname(__FILE__), 'vendor', 'gems', 'ruby', '1.8', 'gems', 'redis-0.1.1', 'tasks', 'redis.tasks.rb'))
 rescue =>e
   puts "Make sure to run 'gem bundle' to bring in all the redis tasks"
 end
