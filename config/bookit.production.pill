@@ -4,7 +4,7 @@ Bluepill.application("bookit") do |app|
   app.process("backend_app") do |process|
     process.working_dir = ROOT
     
-    process.start_command = "script/courts_ctl start"
+    process.start_command = "script/courts_ctl start production"
     process.stop_command = "script/courts_ctl stop"
     
     process.pid_file = ROOT + "log/courts.pid"
