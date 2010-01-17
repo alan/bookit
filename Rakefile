@@ -1,5 +1,5 @@
 require 'rake'
-require 'tennis-slots'
+require 'bookit'
 require 'spec/rake/spectask'
 
 begin

@@ -5,12 +5,11 @@ ROOT = File.expand_path(File.dirname(__FILE__) + '/../')
 require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'environment'))
 Bundler.require_env
 
-# require 'rubygems'
 require 'eventmachine'
 require 'time'
 require 'daemons'
 
-require "#{ROOT}/tennis-slots"
+require "#{ROOT}/bookit"
 
 ENV['APP_ENV'] = ARGV[1] || "development" unless ENV['APP_ENV']
 include AutomateAT::Daemon
