@@ -24,12 +24,12 @@ module AutomateAT
       def agent
         @agent ||= WWW::Mechanize.new {|agent|
           agent.user_agent_alias = 'Mac Safari'
-          agent.log = AutomateAT::logger
+          agent.log = Bookit.logger
         }
       end
     
       def web_opts
-        AutomateAT::CONFIG['web']
+        Bookit::CONFIG['web']
       end
     end
   end

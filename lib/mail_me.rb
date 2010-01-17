@@ -38,7 +38,7 @@ module AutomateAT
     private
     
     def mail_opts
-      AutomateAT::CONFIG['email']
+      AutomateAT::Bookit::CONFIG['email']
     end
   end
 end

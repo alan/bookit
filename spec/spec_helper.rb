@@ -7,5 +7,5 @@ require 'spec'
 require File.dirname(__FILE__) + '/../tennis-slots'
 
 Spec::Runner.configure do |config|
-  config.before(:each) { AutomateAT.engine.delete_all }
+  config.before(:each) { AutomateAT::Bookit.engine.delete_all }
 end

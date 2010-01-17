@@ -11,6 +11,7 @@ require 'time'
 require 'daemons'
 
 require "#{ROOT}/tennis-slots"
+
 include AutomateAT::Daemon
 
 Daemons.run_proc("courts", {:monitor => false, :dir_mode => :normal, :dir => "#{ROOT}/log",

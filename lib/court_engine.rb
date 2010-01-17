@@ -7,8 +7,8 @@ module AutomateAT
       @adapter = Redis.new(:host => '127.0.0.1', 
                            :port => 6379, 
                            :thread_safe => true, 
-                           :db => CONFIG["db"], 
-                           :logger => AutomateAT::logger)
+                           :db => Bookit::CONFIG["db"],
+                           :logger => Bookit::logger)
       @time_expiration = time_expiration
     end
     
@@ -70,8 +70,8 @@ module AutomateAT
     
     def setup_wanted_times
       return if adapter.keys("wanted:*").any?
-      AutomateAT::CONFIG["wanted_times"].keys.each do |day|
-        times = AutomateAT::CONFIG["wanted_times"][day]
+      Bookit::CONFIG["wanted_times"].keys.each do |day|
+        times = Bookit::CONFIG["wanted_times"][day]
         times.split(', ').each{|time| adapter.sadd(key("wanted", day), time)}
       end
     end
