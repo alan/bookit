@@ -12,6 +12,7 @@ require 'daemons'
 
 require "#{ROOT}/tennis-slots"
 
+ENV['APP_ENV'] = ARGV[1] || "development" unless ENV['APP_ENV']
 include AutomateAT::Daemon
 
 Daemons.run_proc("courts", {:monitor => false, :dir_mode => :normal, :dir => "#{ROOT}/log",
