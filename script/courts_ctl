@@ -6,7 +6,6 @@ require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'environment'))
 Bundler.require_env
 
 require 'eventmachine'
-require 'time'
 require 'daemons'
 
 require "#{ROOT}/bookit"
