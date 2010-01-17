@@ -13,7 +13,7 @@ require "#{ROOT}/bookit"
 ENV['APP_ENV'] = ARGV[1] || "development" unless ENV['APP_ENV']
 include AutomateAT::Daemon
 
-Daemons.run_proc("courts", {:monitor => false, :dir_mode => :normal, :dir => "#{ROOT}/log",
+Daemons.run_proc("bookit", {:monitor => false, :dir_mode => :normal, :dir => "#{ROOT}/log",
                             :multiple => false, :backtrace=>true}) do
 
   EM.run{
