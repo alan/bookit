@@ -1,5 +1,5 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'vendor', 'gems', 'environment'))
-Bundler.require_env
+Bundler.require_env("test")
 
 ENV["APP_ENV"] = "test"
 

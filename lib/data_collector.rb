@@ -1,3 +1,5 @@
+class ErrorPageError < StandardError; end;
+
 module AutomateAT
   class DataCollector
     class << self
@@ -11,10 +13,16 @@ module AutomateAT
         landing_page = go_to_landing_page
         indoor_page = agent.click landing_page.link_with(:text => web_opts["court_type"])
         indoor_page.parser
+      rescue ErrorPageError
+        Nokogiri::HTML::Document.new
       end
   
       def go_to_landing_page
         login_page = agent.get(web_opts['landing'])
+        if login_page.uri.to_s =~ /Error/
+          Bookit.logger.error "Got error page"
+          raise ErrorPageError 
+        end
         form = login_page.forms.first
         form.send(web_opts['password_field'], web_opts['password'])
         form.send(web_opts['user_field'], web_opts['username'])
