@@ -5,5 +5,7 @@ config.yml
 personal_todo
 log/*
 bin/*
+!vendor/gems/ruby/1.8/cache/
+!vendor/gems/ruby/1.8/dirs/
 vendor/gems/*
-!vendor/gems/cache/
+
