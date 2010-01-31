@@ -1,3 +1,5 @@
+ENV['APP_ENV'] ||= 'development'
+
 ROOT = File.dirname(__FILE__)
 
 require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'environment'))

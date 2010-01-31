@@ -1,5 +1,4 @@
 require 'libraries'
-ENV["APP_ENV"] ||= "development"
 
 module AutomateAT
   class Bookit
@@ -32,7 +31,6 @@ module AutomateAT
     def self.initialize_logger
       case ENV["APP_ENV"]
                   when "development"
-                    puts "dev log"
                     logger = Logger.new(STDOUT)
                     logger.level = Logger::INFO
                     logger.info "Logger started for development"
@@ -43,7 +41,6 @@ module AutomateAT
                     logger.info "Logger started for test"
                     logger
                   when "production"
-                    puts "prod log"
                     logger = Logger.new(File.expand_path(File.dirname(__FILE__) + "/log/production.log"))
                     logger.level = Logger::WARN
                     logger.warn "Logger started for production"
