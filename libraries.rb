@@ -1,7 +1,7 @@
 ROOT = File.dirname(__FILE__)
 
 require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'environment'))
-Bundler.require_env
+Bundler.require_env("backend")
 
 require 'mechanize'
 require 'redis'

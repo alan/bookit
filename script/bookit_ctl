@@ -3,7 +3,7 @@
 ROOT = File.expand_path(File.dirname(__FILE__) + '/../')
 
 require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'environment'))
-Bundler.require_env
+Bundler.require_env("daemon")
 
 require 'eventmachine'
 require 'daemons'
