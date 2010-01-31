@@ -1,4 +1,4 @@
-require 'libraries'
+require 'config/boot'
 
 module AutomateAT
   class Bookit
