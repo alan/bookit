@@ -6,9 +6,11 @@ Bluepill.application("bookit") do |app|
     
     process.start_command = "/usr/bin/env APP_ENV=production script/bookit_ctl start"
     process.stop_command = "script/bookit_ctl stop"
+    process.restart_command = "script/bookit_ctl restart"
     
     process.pid_file = ROOT + "log/bookit.pid"
     
+    process.restart_grace_time  = 10.seconds
     process.checks :mem_usage, :every => 5.minutes, :below => 100.megabytes, :times => [3,5]
   end
 end

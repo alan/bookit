@@ -2,7 +2,7 @@ require 'config/boot'
 
 module AutomateAT
   class Bookit
-    CONFIG = YAML.load_file(File.dirname(__FILE__) + '/config/config.yml')[ENV["APP_ENV"]]
+    CONFIG = YAML.load_file(ROOT + '/config/config.yml')[ENV["APP_ENV"]]
     
     def self.engine
       @@engine ||= CourtEngine.new
@@ -36,12 +36,12 @@ module AutomateAT
                     logger.info "Logger started for development"
                     logger
                   when "test"
-                    logger = Logger.new(File.expand_path(File.dirname(__FILE__) + "/log/test.log"))
+                    logger = Logger.new(File.expand_path(ROOT + "/log/test.log"))
                     logger.level = Logger::INFO
                     logger.info "Logger started for test"
                     logger
                   when "production"
-                    logger = Logger.new(File.expand_path(File.dirname(__FILE__) + "/log/production.log"))
+                    logger = Logger.new(File.expand_path(ROOT + "/log/production.log"))
                     logger.level = Logger::WARN
                     logger.warn "Logger started for production"
                     logger
