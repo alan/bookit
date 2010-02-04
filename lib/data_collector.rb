@@ -33,6 +33,7 @@ module AutomateAT
         @agent ||= WWW::Mechanize.new {|agent|
           agent.user_agent_alias = 'Mac Safari'
           agent.log = Bookit.logger
+          agent.max_history = 1
         }
       end
     
