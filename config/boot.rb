@@ -2,7 +2,7 @@ ENV['APP_ENV'] ||= 'development'
 
 ROOT = File.join(File.dirname(__FILE__), '..')
 
-require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'environment'))
+require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'ruby', '1.8','environment'))
 Bundler.require_env("backend")
 
 require 'mechanize'
