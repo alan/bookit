@@ -1,13 +1,7 @@
-require 'rake'
 require 'bookit'
-require 'spec/rake/spectask'
+require 'rake'
 
-begin
-  # TODO Need a better way for this
-  require File.expand_path(File.join(File.dirname(__FILE__), 'vendor', 'gems', 'ruby', '1.8', 'gems', 'redis-0.1.1', 'tasks', 'redis.tasks.rb'))
-rescue =>e
-  puts "Make sure to run 'gem bundle' to bring in all the redis tasks"
-end
+require 'spec/rake/spectask'
 
 if !defined?(Spec)
   puts "spec targets require RSpec"
