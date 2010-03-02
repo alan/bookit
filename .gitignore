@@ -8,4 +8,6 @@ bin/*
 !vendor/gems/ruby/1.8/cache/
 !vendor/gems/ruby/1.8/dirs/
 vendor/gems/*
+.bundle
+tmp
 
