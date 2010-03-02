@@ -2,8 +2,17 @@ ENV['APP_ENV'] ||= 'development'
 
 ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
-require File.expand_path(File.join(ROOT, 'vendor', 'gems', 'ruby', '1.8','environment'))
-Bundler.require_env("backend")
+begin
+  # Require the preresolved locked set of gems.
+  require File.expand_path(ROOT + '/.bundle/environment', __FILE__)
+rescue LoadError
+  # Fallback on doing the resolve at runtime.
+  require "rubygems"
+  require "bundler"
+  Bundler.setup
+end
+
+Bundler.require("backend")
 
 require 'mechanize'
 require 'redis'
