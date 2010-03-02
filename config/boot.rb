@@ -12,7 +12,7 @@ rescue LoadError
   Bundler.setup
 end
 
-Bundler.require("backend, test")
+Bundler.require("backend")
 
 require 'mechanize'
 require 'redis'
