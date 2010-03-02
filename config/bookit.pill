@@ -1,4 +1,46 @@
 ROOT = File.dirname(__FILE__) + '/../'
+Email = YAML.load_file(ROOT + 'config/config.yml')['production']['email']
+require 'rubygems'
+require 'pony'
+
+module Bluepill
+  module Triggers
+    class EmailNotifier < Bluepill::Trigger
+      def initialize(process, options = {})
+        @notify_on = [options.delete(:notify_on)]
+        super
+      end
+  
+      def notify(transition)
+        self.logger.info(transition.to_name)
+        if @notify_on.include?(transition.to_name)
+          send_notification(transition)
+        end
+      end
+    
+      private
+    
+      def send_notification(transition)
+        Pony.mail(
+          :to => Email['recipient'],
+          :subject => "Your process #{self.process.name}",
+          :body => "Your process #{self.process.name}",
+          :content_type => 'text/html',
+          :via => :smtp,
+          :smtp => {
+             :host => "smtp.gmail.com",
+             :port => "587",
+             :auth => :plain,
+             :user => Email['user'],
+             :password => Email['password'],
+             :tls => true
+            }
+        )
+      end
+    end
+  end
+end
+
 
 Bluepill.application("bookit") do |app|
   app.process("backend_app") do |process|
@@ -6,11 +48,12 @@ Bluepill.application("bookit") do |app|
     
     process.start_command = "/usr/bin/env APP_ENV=production script/bookit_ctl start"
     process.stop_command = "script/bookit_ctl stop"
-    process.restart_command = "script/bookit_ctl restart"
+    process.restart_command = "/usr/bin/env APP_ENV=production script/bookit_ctl restart"
     
     process.pid_file = ROOT + "log/bookit.pid"
     
     process.restart_grace_time  = 10.seconds
-    process.checks :mem_usage, :every => 5.minutes, :below => 100.megabytes, :times => [3,5]
+    process.checks :mem_usage, :every => 5.minutes, :below => 50.megabytes, :times => [3,5]
+    process.checks :email_notifier, :notify_on => :restarting
   end
 end
