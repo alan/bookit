@@ -1,5 +1,5 @@
-ROOT = File.dirname(__FILE__) + '/../'
-Email = YAML.load_file(ROOT + 'config/config.yml')['production']['email']
+ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+Email = YAML.load_file(ROOT + '/config/config.yml')['production']['email']
 require 'rubygems'
 require 'pony'
 
@@ -12,7 +12,7 @@ module Bluepill
       end
   
       def notify(transition)
-        self.logger.info(transition.to_name)
+        # self.logger.info(transition.to_name)
         if @notify_on.include?(transition.to_name)
           send_notification(transition)
         end
@@ -50,7 +50,7 @@ Bluepill.application("bookit") do |app|
     process.stop_command = "script/bookit_ctl stop"
     process.restart_command = "/usr/bin/env APP_ENV=production script/bookit_ctl restart"
     
-    process.pid_file = ROOT + "log/bookit.pid"
+    process.pid_file = ROOT + "/log/bookit.pid"
     
     process.restart_grace_time  = 10.seconds
     process.checks :mem_usage, :every => 5.minutes, :below => 50.megabytes, :times => [3,5]
