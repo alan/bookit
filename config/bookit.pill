@@ -1,3 +1,4 @@
+require 'yaml'
 ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 Email = YAML.load_file(ROOT + '/config/config.yml')['production']['email']
 require 'rubygems'

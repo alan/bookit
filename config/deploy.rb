@@ -24,7 +24,7 @@ set :deploy_via, :remote_cache
 
 after 'deploy:symlink', 'deploy:symlink_config'
 before 'deploy:restart', 'deploy:fresh_bundle'
-# after 'deploy:fresh_bundle', 'deploy:reload_bluepill'
+after 'deploy:fresh_bundle', 'deploy:reload_bluepill'
 
 namespace :deploy do
   task :symlink_config do
