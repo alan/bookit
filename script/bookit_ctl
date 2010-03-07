@@ -1,11 +1,8 @@
 #!/usr/bin/env ruby
-require "#{File.expand_path(File.dirname(__FILE__) + '/../')}/bookit"
-
+require "#{File.expand_path(File.dirname(__FILE__) + '/../')}/config/boot"
 Bundler.require("daemon")
 
-require 'eventmachine'
-require 'daemons'
-
+require "backend_daemon"
 include AutomateAT::Daemon
 
 def stop
