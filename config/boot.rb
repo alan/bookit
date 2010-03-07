@@ -14,9 +14,6 @@ end
 
 Bundler.require("backend")
 
-require 'mechanize'
-require 'redis'
-require 'pony'
 require 'erb'
 require 'logger'
 
