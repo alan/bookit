@@ -2,6 +2,7 @@ require 'bookit'
 require 'rake'
 
 require 'spec/rake/spectask'
+require 'redis/raketasks'
 
 if !defined?(Spec)
   puts "spec targets require RSpec"
