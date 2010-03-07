@@ -1,5 +1,5 @@
 gem "mechanize"
-gem "redis", "0.1.1", :git => "git://github.com/ezmobius/redis-rb.git"
+gem "redis", "0.1.2"
 gem "pony"
 
 group "daemon" do

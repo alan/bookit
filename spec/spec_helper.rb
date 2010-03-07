@@ -1,7 +1,6 @@
 ENV["APP_ENV"] = "test"
 
-require 'spec'
-require File.dirname(__FILE__) + '/../bookit'
+require File.dirname(__FILE__) + '/../lib/backend'
 Bundler.require("backend, test")
 
 Spec::Runner.configure do |config|

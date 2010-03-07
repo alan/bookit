@@ -1,5 +1,16 @@
-require 'bookit'
-require 'rake'
+ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+
+begin
+  # Require the preresolved locked set of gems.
+  require File.expand_path(ROOT + '/.bundle/environment', __FILE__)
+rescue LoadError
+  # Fallback on doing the resolve at runtime.
+  require "rubygems"
+  require "bundler"
+  Bundler.setup
+end
+
+Bundler.require('test')
 
 require 'spec/rake/spectask'
 require 'redis/raketasks'
