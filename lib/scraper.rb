@@ -35,11 +35,5 @@ module AutomateAT
       end
       dates
     end
-    
-    private
-    
-    def redis_db
-      AutomateAT.redis_db
-    end
   end
 end
