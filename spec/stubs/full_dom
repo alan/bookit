@@ -51,18 +51,19 @@
 
                                 <table class="fttable">
 <tr>
-<td class="fttopleft">Time</td>
-    <td class="ftcolhead">Friday<br>4 Dec</td>
-    <td class="ftcolhead">Saturday<br>5 Dec</td>
-    <td class="ftcolhead">Sunday<br>6 Dec</td>
-    <td class="ftcolhead">Monday<br>7 Dec</td>
-    <td class="ftcolhead">Tuesday<br>8 Dec</td>
-    <td class="ftcolhead">Wednesday<br>9 Dec</td>
-    <td class="ftcolhead">Thursday<br>10 Dec</td>
-    <td class="ftcolhead">Friday<br>11 Dec</td>
+    <th class="fttopleft">Time</th>
+    <th class="ftcolhead">Friday<br/>4 Dec</th>
+    <th class="ftcolhead">Saturday<br/>5 Dec</th>
+    <th class="ftcolhead">Sunday<br/>6 Dec</th>
+    <th class="ftcolhead">Monday<br/>7 Dec</th>
+    <th class="ftcolhead">Tuesday<br/>8 Dec</th>
+    <th class="ftcolhead">Wednesday<br/>9 Dec</th>
+    <th class="ftcolhead">Thursday<br/>10 Dec</th>
+    <th class="ftcolhead">Friday<br/>11 Dec</th>
+    <th class="fttopleft">Time</th
   </tr>
 <tr>
-<td class="ftrowhead">7:00am</td>
+    <th class="ftrowhead">7:00am</th>
     <td class="ftdata">past</td>
     <td class="ftblank">?</td>
     <td class="ftblank">?</td>
@@ -73,9 +74,10 @@
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=25200">2 Left</a> </td>
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=25200">1 Left</a> </td>
-  </tr>
+    <th class="ftrowhead">7:00am</th>
+</tr>
 <tr>
-<td class="ftrowhead">8:00am</td>
+    <th class="ftrowhead">8:00am</th>
     <td class="ftdata">past</td>
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15315&amp;ST=28800">1 Left</a> </td>
@@ -88,9 +90,10 @@
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=28800">2 Left</a> </td>
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=28800">1 Left</a> </td>
-  </tr>
+    <th class="ftrowhead">8:00am</th>
+</tr>
 <tr>
-<td class="ftrowhead">9:00am</td>
+<th class="ftrowhead">9:00am</th>
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -100,9 +103,10 @@
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=32400">2 Left</a> </td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">9:00am</th>
   </tr>
 <tr>
-<td class="ftrowhead">10:00am</td>
+    <th class="ftrowhead">10:00am</th>
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -112,9 +116,10 @@
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=36000">1 Left</a> </td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">10:00am</th>
   </tr>
 <tr>
-<td class="ftrowhead">11:00am</td>
+    <th class="ftrowhead">11:00am</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -124,9 +129,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">11:00am</th> 
   </tr>
 <tr>
-<td class="ftrowhead">12:00pm</td>
+    <th class="ftrowhead">12:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -137,9 +143,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">12:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">1:00pm</td>
+    <th class="ftrowhead">1:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -150,9 +157,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=46800">1 Left</a> </td>
+    <th class="ftrowhead">1:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">2:00pm</td>
+  <th class="ftrowhead">2:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -162,9 +170,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">2:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">3:00pm</td>
+  <th class="ftrowhead">3:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -175,9 +184,10 @@
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=54000">1 Left</a> </td>
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=54000">3 Left</a> </td>
+  <th class="ftrowhead">3:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">4:00pm</td>
+    <th class="ftrowhead">4:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -186,9 +196,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">4:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">5:00pm</td>
+    <th class="ftrowhead">5:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -197,9 +208,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">5:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">6:00pm</td>
+    <th class="ftrowhead">6:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -208,9 +220,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">6:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">7:00pm</td>
+    <th class="ftrowhead">7:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -219,9 +232,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
+    <th class="ftrowhead">7:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">8:00pm</td>
+  <th class="ftrowhead">8:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -231,9 +245,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=72000">3 Left</a> </td>
+    <th class="ftrowhead">8:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">9:00pm</td>
+    <th class="ftrowhead">9:00pm</th> 
     <td class="ftdata">past</td>
     <td class="ftdata">sold</td>
     <td class="ftdata">sold</td>
@@ -243,9 +258,10 @@
     <td class="ftdata">sold</td>
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15321&amp;ST=75600">4 Left</a> </td>
+    <th class="ftrowhead">9:00pm</th> 
   </tr>
 <tr>
-<td class="ftrowhead">10:00pm</td>
+    <th class="ftrowhead">10:00pm</th> 
     <td class="ftblank">?</td>
     <td class="ftblank">?</td>
     <td class="ftblank">?</td>
@@ -256,7 +272,21 @@
     <td class="ftdata">
 <a class="ftlink" href="lfbook.asp?WCI=selectarea&amp;SD=15320&amp;ST=79200">2 Left</a> </td>
     <td class="ftblank">?</td>
+    <th class="ftrowhead">10:00pm</th> 
   </tr>
+  <tr>
+      <th class="fttopleft">Time</th>
+      <th class="ftcolhead">Friday<br/>4 Dec</th>
+      <th class="ftcolhead">Saturday<br/>5 Dec</th>
+      <th class="ftcolhead">Sunday<br/>6 Dec</th>
+      <th class="ftcolhead">Monday<br/>7 Dec</th>
+      <th class="ftcolhead">Tuesday<br/>8 Dec</th>
+      <th class="ftcolhead">Wednesday<br/>9 Dec</th>
+      <th class="ftcolhead">Thursday<br/>10 Dec</th>
+      <th class="ftcolhead">Friday<br/>11 Dec</th>
+      <th class="fttopleft">Time</th
+    </tr>
+  <tr>
 </table>
 </div>
 
