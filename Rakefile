@@ -1,4 +1,4 @@
-ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+ROOT = File.expand_path(File.join(File.dirname(__FILE__)))
 
 begin
   # Require the preresolved locked set of gems.
@@ -13,7 +13,7 @@ end
 Bundler.require('test')
 
 require 'spec/rake/spectask'
-require 'redis/raketasks'
+require 'tasks/redis.tasks'
 
 if !defined?(Spec)
   puts "spec targets require RSpec"

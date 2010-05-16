@@ -22,7 +22,6 @@ describe AutomateAT::CourtEngine do
   
   it "should be able to delete all keys" do
     @engine.adapter["foo"] = "bar"
-    @engine.adapter.keys('*').size.should == 1
     @engine.delete_all
     @engine.adapter.keys('*').size.should == 0
   end
@@ -40,7 +39,7 @@ describe AutomateAT::CourtEngine do
   context "#setup_wanted_times" do
     it "should save the wanted times from the config yaml" do
       @engine.setup_wanted_times
-      times = @engine.adapter.set_members("wanted:monday")
+      times = @engine.adapter.smembers("wanted:monday")
       times.should include("6:00pm")
       times.should include("7:00pm")
       times.should include("8:00pm")
@@ -58,10 +57,13 @@ describe AutomateAT::CourtEngine do
   context "notification of courts to user" do
     before(:each) do
       @engine.setup_wanted_times
-      @engine.save_courts({"Thursday, 21 Nov" => ["7:00am", "8:00pm"], "Friday, 22 Nov" => ["9:00pm"]})
     end
     
-    describe "#courts_to_notify" do    
+    describe "#courts_to_notify" do
+      before(:each) do
+        @engine.save_courts({"Thursday, 21 Nov" => ["7:00am", "8:00pm"], "Friday, 22 Nov" => ["9:00pm"]})
+      end
+          
       it "should only include times which the user wants to know about" do
         @engine.courts_to_notify.should == {"Thursday, 21 Nov" => ["8:00pm"], "Friday, 22 Nov" => ["9:00pm"]}
         @engine.courts_to_notify.should == {"Thursday, 21 Nov" => ["8:00pm"], "Friday, 22 Nov" => ["9:00pm"]}
@@ -104,7 +106,7 @@ describe AutomateAT::CourtEngine do
         @engine.adapter.smembers("available:Thursday,-21-Nov").should == ["8:00pm"]
         @engine.adapter.smembers("available:Friday,-22-Nov").should == ["9:00pm"]
       end
-      
+
       it "should delete previous availability" do
         @engine.save_courts({"Thursday, 21 Nov" => ["8:00pm"]})
         @engine.save_courts({"Thursday, 21 Nov" => ["9:00pm"]})
