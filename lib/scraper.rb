@@ -11,7 +11,7 @@ module AutomateAT
       
       availability = data.inject({}) do |result, row|
         clean_data = row.css('td')
-        time = row.css('th')[0].text
+        time = row.css('th')[0].text.gsub('.', ':')
                 
         dates.each_with_index do |date, i|
           if clean_data[i].text =~ /Left/
