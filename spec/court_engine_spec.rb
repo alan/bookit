@@ -39,18 +39,13 @@ describe AutomateAT::CourtEngine do
   context "#setup_wanted_times" do
     it "should save the wanted times from the config yaml" do
       @engine.setup_wanted_times
-      times = @engine.adapter.smembers("wanted:monday")
-      times.should include("6:00pm")
-      times.should include("7:00pm")
-      times.should include("8:00pm")
-      times.should include("9:00pm")
+      @engine.adapter.smembers("wanted:monday").should include("6:00pm", "7:00pm", "8:00pm", "9:00pm")
     end
-    
     # TODO review, only load once from yaml (with no arguments)
-    it "should only set them up once" do
+    it "should override wanted times" do
       @engine.adapter.sadd("wanted:monday", "7:00pm")
       @engine.setup_wanted_times
-      @engine.adapter.smembers("wanted:monday").should == ["7:00pm"]
+      @engine.adapter.smembers("wanted:monday").should include("6:00pm", "7:00pm", "8:00pm", "9:00pm")
     end
   end
   

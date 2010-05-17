@@ -69,9 +69,7 @@ module AutomateAT
     end
     
     def setup_wanted_times
-      return if adapter.keys("wanted:*").any?
-      Bookit::CONFIG["wanted_times"].keys.each do |day|
-        times = Bookit::CONFIG["wanted_times"][day]
+      Bookit::CONFIG["wanted_times"].each do |day, times|
         times.split(', ').each{|time| adapter.sadd(key("wanted", day), time)}
       end
     end
