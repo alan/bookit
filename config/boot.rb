@@ -46,7 +46,7 @@ module AutomateAT
         mailer.send_availability
         engine.user_notified
       rescue Timeout::Error
-        logger.warning = "#{Time.now} :: The scraper timed out"
+        logger.warn "#{Time.now} :: The scraper timed out"
       end
     end
     
