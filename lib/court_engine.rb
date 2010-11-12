@@ -39,9 +39,9 @@ module AutomateAT
         to_notify_key = key("to_notify", date)
         notified_keys = adapter.keys(key("notified", date, '*'))
         
-        # found => has a time that is available that I am interested
+        # found => has the times that is available that I am interested
         adapter.sinterstore("found", availability, wanted_key)
-        times_to_notify = adapter.sdiffstore(to_notify_key, "found", notified_keys)
+        adapter.sdiffstore(to_notify_key, "found", *notified_keys)
         
         data = adapter.smembers(to_notify_key)
         

@@ -1,6 +1,6 @@
 ENV["APP_ENV"] = "test"
 
-require File.dirname(__FILE__) + '/../config/boot'
+require './config/boot'
 Bundler.require("test")
 
 Spec::Runner.configure do |config|

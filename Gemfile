@@ -12,5 +12,5 @@ end
 group "test" do
   gem "rake"
   gem "rspec"
-  gem "ruby-debug"
+  gem "ruby-debug19"
 end

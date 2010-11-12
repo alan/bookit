@@ -13,7 +13,7 @@ end
 Bundler.require('test')
 
 require 'spec/rake/spectask'
-require 'tasks/redis.tasks'
+require ROOT + '/tasks/redis.tasks'
 
 if !defined?(Spec)
   puts "spec targets require RSpec"

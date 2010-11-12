@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/spec_helper'
+require 'spec_helper'
 
 describe AutomateAT::MailMe do
   context "Creating a mailer" do
