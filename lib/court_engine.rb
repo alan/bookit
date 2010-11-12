@@ -30,7 +30,7 @@ module AutomateAT
     end
     
     def courts_to_notify
-      available_dates = adapter.keys("available:*").split(' ')
+      available_dates = adapter.keys("available:*")
       available_dates.inject({}) do |result, availability|
         
         wanted_key = matching_wanted_key_for(availability)
@@ -55,7 +55,7 @@ module AutomateAT
     end
     
     def user_notified
-      to_notify = adapter.keys("to_notify:*").split(' ')
+      to_notify = adapter.keys("to_notify:*")
       to_notify.each do |key_name|
         date = key_name.gsub("to_notify:", "")
         count = adapter.incr(date).to_s
