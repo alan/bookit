@@ -33,19 +33,15 @@ module AutomateAT
       available_dates = adapter.keys("available:*")
       available_dates.inject({}) do |result, availability|
         
+        # keys to be used
         wanted_key = matching_wanted_key_for(availability)
         date = human_date_from_availability_key(availability)
-        
-        adapter.sinterstore("temp", availability, wanted_key)
-        
-        notified = adapter.keys(key("notified", date, '*'))
-        
-        # Can't use SDIFFSTORE as write operations in Redis ignore
-        # volatile keys
-        times_to_notify = adapter.sdiff("temp", notified)
-        
         to_notify_key = key("to_notify", date)
-        times_to_notify.each{|time| adapter.sadd(to_notify_key, time)}
+        notified_keys = adapter.keys(key("notified", date, '*'))
+        
+        # found => has a time that is available that I am interested
+        adapter.sinterstore("found", availability, wanted_key)
+        times_to_notify = adapter.sdiffstore(to_notify_key, "found", notified_keys)
         
         data = adapter.smembers(to_notify_key)
         
