@@ -67,6 +67,8 @@ describe AutomateAT::CourtEngine do
       it "should not include times which have been notified recently" do
         @engine.adapter.sadd("notified:Thursday,-21-Nov:1", "8:00pm")
         @engine.adapter.sadd("notified:Friday,-22-Nov:1", "9:00pm")
+        @engine.adapter.sadd("notified:Thursday,-21-Nov", "notified:Thursday,-21-Nov:1")
+        @engine.adapter.sadd("notified:Friday,-22-Nov", "notified:Friday,-22-Nov:1")
         @engine.courts_to_notify.should == {}
       end
     end

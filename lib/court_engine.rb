@@ -36,7 +36,7 @@ module AutomateAT
         wanted_key = matching_wanted_key_for(availability)
         date = human_date_from_availability_key(availability)
         to_notify_key = key("to_notify", date)
-        notified_keys = adapter.keys(key("notified", date, '*'))
+        notified_keys = adapter.smembers(key("notified", date))
         
         # found => has the times that is available that I am interested
         adapter.sinterstore("found", availability, wanted_key)
@@ -44,18 +44,23 @@ module AutomateAT
         
         data = adapter.smembers(to_notify_key)
         
-        result[date] = data if data.any?
+        if data.any?
+          adapter.sadd("to_notify", to_notify_key)
+          result[date] = data
+        end
         result
       end
     end
     
     def user_notified
-      to_notify = adapter.keys("to_notify:*")
+      to_notify = adapter.smembers("to_notify")
       to_notify.each do |key_name|
         date = key_name.gsub("to_notify:", "")
         count = adapter.incr(date).to_s
-        adapter.rename(key_name, key("notified", date, count))
-        adapter.expire(key("notified", date, count), time_expiration)
+        notified_key = key("notified", date, count)
+        adapter.rename(key_name, notified_key)
+        adapter.sadd(key("notified", date), notified_key)
+        adapter.expire(notified_key, time_expiration)
       end
     end
     
