@@ -18,13 +18,15 @@ module AutomateAT
     
     def save_courts(courts)
       old_available = adapter.smembers("available")
-      old_available.each{|o| adapter.del(o)}
-      adapter.del("available")
+      adapter.pipelined do
+        old_available.each{|o| adapter.del(o)}
+        adapter.del("available")
     
-      courts.each do |day, times|
-        day_key = key("available", day)
-        adapter.sadd("available", day_key)
-        times.each{|time| adapter.sadd(day_key, time)}
+        courts.each do |day, times|
+          day_key = key("available", day)
+          adapter.sadd("available", day_key)
+          times.each{|time| adapter.sadd(day_key, time)}
+        end
       end
     end
     
