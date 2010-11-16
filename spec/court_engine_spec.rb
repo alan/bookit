@@ -98,6 +98,7 @@ describe AutomateAT::CourtEngine do
     describe "#save_courts" do
       it "should save all the courts available in sets for each date" do
         @engine.save_courts({"Thursday, 21 Nov" => ["8:00pm"], "Friday, 22 Nov" => ["9:00pm"]})
+        @engine.adapter.smembers("available").should include("available:Thursday,-21-Nov", "available:Friday,-22-Nov")
         @engine.adapter.smembers("available:Thursday,-21-Nov").should == ["8:00pm"]
         @engine.adapter.smembers("available:Friday,-22-Nov").should == ["9:00pm"]
       end
@@ -105,16 +106,8 @@ describe AutomateAT::CourtEngine do
       it "should delete previous availability" do
         @engine.save_courts({"Thursday, 21 Nov" => ["8:00pm"]})
         @engine.save_courts({"Thursday, 21 Nov" => ["9:00pm"]})
+        @engine.adapter.smembers("available").should == ["available:Thursday,-21-Nov"]
         @engine.adapter.smembers("available:Thursday,-21-Nov").should == ["9:00pm"]
-      end
-    end
-    
-    describe "#add_time" do
-      it "should add a time to the set of available times for the day" do
-        @engine.add_time("Thursday, 21 Nov", "8:00pm")
-        @engine.adapter.smembers("available:Thursday,-21-Nov").should == ["8:00pm"]
-        @engine.add_time("Thursday, 21 Nov", "9:00pm")
-        @engine.adapter.smembers("available:Thursday,-21-Nov").should == ["8:00pm", "9:00pm"]
       end
     end
   end

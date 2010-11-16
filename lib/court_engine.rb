@@ -16,16 +16,15 @@ module AutomateAT
       adapter.flushdb
     end
     
-    # Change when multi add is implemented in Redis
-    def add_time(day, time)
-      adapter.sadd(key("available", day), time)
-    end
-    
     def save_courts(courts)
-      adapter.keys("available:*").each{|k| adapter.del(k)}
+      old_available = adapter.smembers("available")
+      old_available.each{|o| adapter.del(o)}
+      adapter.del("available")
+    
       courts.each do |day, times|
         day_key = key("available", day)
-        times.each{|time| add_time(day, time)}
+        adapter.sadd("available", day_key)
+        times.each{|time| adapter.sadd(day_key, time)}
       end
     end
     
