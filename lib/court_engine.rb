@@ -29,7 +29,7 @@ module AutomateAT
     end
     
     def courts_to_notify
-      available_dates = adapter.keys("available:*")
+      available_dates = adapter.smembers("available")
       available_dates.inject({}) do |result, availability|
         
         # keys to be used
