@@ -1,5 +1,10 @@
 config = YAML.load_file("#{ENV['HOME']}/.capistrano.yml")['bookit']
 
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+require "rvm/capistrano"                  # Load RVM's capistrano plugin.
+set :rvm_ruby_string, '1.9.2@bookit'        # Or whatever env you want it to run in.
+set :rvm_type, :system
+
 set :application, "bookit"
 set :repository,  "git://github.com/alan/bookit.git"
 
@@ -30,26 +35,23 @@ namespace :deploy do
   task :symlink_config do
     run "cd #{release_path}/config; ln -nfs #{shared_path}/config/config.yml"
   end
-  
+
   task :reload_bluepill do
     sudo "bluepill load #{current_path}/config/bookit.pill"
   end
-  
+
   task :fresh_bundle do
-    run("cd #{release_path}; bundle install")
+    run "cd #{current_path}; #{sudo} bundle install"
   end
-  
-  task :bundle do
-    run("cd #{release_path}; gem bundle --cached")
-  end
-  
+
   task :start do
-    sudo 'cd #{release_path}; bluepill bookit start'
+    sudo 'bluepill bookit start'
   end
+
   task :stop do
-    sudo 'cd #{release_path}; bluepill bookit stop'
+    sudo 'bluepill bookit stop'
   end
-  
+
   task :restart, :roles => :app, :except => { :no_release => true } do
     sudo 'bluepill bookit restart'
   end
