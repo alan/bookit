@@ -5,6 +5,7 @@ GIT
     daemons (1.0.12)
 
 GEM
+  remote: http://rubygems.org/
   specs:
     archive-tar-minitar (0.5.2)
     columnize (0.3.1)
