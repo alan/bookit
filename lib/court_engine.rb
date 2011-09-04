@@ -41,10 +41,15 @@ module AutomateAT
         notified_keys = adapter.smembers(key("notified", date))
 
         # found => has the times that is available that I am interested
+
         adapter.sinterstore("found", availability, wanted_key)
+
         adapter.sdiffstore(to_notify_key, "found", *notified_keys)
+        AutomateAT::Bookit.logger.warn("#{date}: #{adapter.smembers(to_notify_key)
+        }")
 
         data = adapter.smembers(to_notify_key)
+        AutomateAT::Bookit.logger.warn("DATA: #{date}: #{data}")
 
         if data.any?
           adapter.sadd("to_notify", to_notify_key)
@@ -58,6 +63,7 @@ module AutomateAT
       to_notify = adapter.smembers("to_notify")
       to_notify.each do |key_name|
         date = key_name.gsub("to_notify:", "")
+        AutomateAT::Bookit.logger.warn("Date counter: #{date}")
         count = adapter.incr(date).to_s
         notified_key = key("notified", date, count)
         adapter.rename(key_name, notified_key)
