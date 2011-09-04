@@ -70,7 +70,7 @@ module AutomateAT
                     logger.warn "Logger started for production"
                     logger
                   else
-                    puts "Don't know what enviornment you are talking about, using STDOUT"
+                    puts "Don't know what environment you are talking about, using STDOUT"
                     Logger.new(STDOUT)
                   end
     end
