@@ -1,3 +1,5 @@
+source :rubygems
+
 group "backend" do
   gem "mechanize"
   gem "redis"
