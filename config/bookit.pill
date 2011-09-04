@@ -28,11 +28,11 @@ module Bluepill
           :body => "Your process #{self.process.name}",
           :content_type => 'text/html',
           :via => :smtp,
-          :smtp => {
+          :via_options => {
              :host => "smtp.gmail.com",
              :port => "587",
              :auth => :plain,
-             :user => Email['user'],
+             :username => Email['user'],
              :password => Email['password'],
              :tls => true
             }
@@ -55,6 +55,5 @@ Bluepill.application("bookit") do |app|
 
     process.restart_grace_time  = 10.seconds
     process.checks :mem_usage, :every => 5.minutes, :below => 50.megabytes, :times => [3,5]
-    process.checks :email_notifier, :notify_on => :restarting
   end
 end
