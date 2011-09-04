@@ -27,15 +27,15 @@ require 'scraper'
 module AutomateAT
   class Bookit
     CONFIG = YAML.load_file(ROOT + '/config/config.yml')[ENV["APP_ENV"]]
-    
+
     def self.engine
       @@engine ||= CourtEngine.new
     end
-  
+
     def self.logger
       @@logger ||= initialize_logger
     end
-  
+
     def self.go
       begin
         raw_data = DataCollector.get_courts
@@ -49,9 +49,9 @@ module AutomateAT
         logger.warn "#{Time.now} :: The scraper timed out"
       end
     end
-    
+
     private
-    
+
     def self.initialize_logger
       case ENV["APP_ENV"]
                   when "development"
@@ -73,6 +73,6 @@ module AutomateAT
                     puts "Don't know what enviornment you are talking about, using STDOUT"
                     Logger.new(STDOUT)
                   end
-    end 
+    end
   end
 end
