@@ -44,6 +44,10 @@ module AutomateAT
 
         adapter.sinterstore("found", availability, wanted_key)
 
+        notified_keys.each do |notified_key|
+          AutomateAT::Bookit.logger.warn("Contents for #{notified_key}: #{adapter.smembers(notified_key).inspect}")
+        end
+
         data = adapter.sdiff("found", *notified_keys)
         AutomateAT::Bookit.logger.warn("Data to notify: #{data.inspect}")
         data.each{|slot| adapter.sadd(to_notify_key, slot)}
