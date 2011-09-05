@@ -29,13 +29,13 @@ module AutomateAT
 
     def time_left_to_openning
       time = Time.now.hour == 23 ? Time.parse('08:00') + DAY_IN_SECONDS : Time.parse('08:00')
-      time - Time.now 
+      time - Time.now
     end
-    
+
     def start
       AutomateAT::Bookit.engine.delete_all
       AutomateAT::Bookit.engine.setup_wanted_times
-      
+
       now = Time.now
       if(now >= Time.parse('08:00') && now <= Time.parse('23:00'))
         day_setup
