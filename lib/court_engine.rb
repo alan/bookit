@@ -44,12 +44,10 @@ module AutomateAT
 
         adapter.sinterstore("found", availability, wanted_key)
 
-        adapter.sdiffstore(to_notify_key, "found", *notified_keys)
-        AutomateAT::Bookit.logger.warn("#{date}: #{adapter.smembers(to_notify_key)
-        }")
+        data = adapter.sdiff("found", *notified_keys)
 
+        adapter.sadd(to_notify_key, *data) if data.any?
         data = adapter.smembers(to_notify_key)
-        AutomateAT::Bookit.logger.warn("DATA: #{date}: #{data}")
 
         if data.any?
           adapter.sadd("to_notify", to_notify_key)
