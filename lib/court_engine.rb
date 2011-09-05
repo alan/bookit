@@ -45,9 +45,7 @@ module AutomateAT
         adapter.sinterstore("found", availability, wanted_key)
 
         data = adapter.sdiff("found", *notified_keys)
-
         data.each{|slot| adapter.sadd(to_notify_key, slot)}
-        data = adapter.smembers(to_notify_key)
 
         if data.any?
           adapter.sadd("to_notify", to_notify_key)
