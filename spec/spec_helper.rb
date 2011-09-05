@@ -3,6 +3,7 @@ ENV["APP_ENV"] = "test"
 require './config/boot'
 Bundler.require("test")
 
+require 'ruby-debug'
 
 Spec::Runner.configure do |config|
   config.before(:all) { FileUtils.mkdir_p(File.join(ROOT, 'log')) }
