@@ -46,7 +46,7 @@ module AutomateAT
 
         data = adapter.sdiff("found", *notified_keys)
 
-        adapter.sadd(to_notify_key, *data) if data.any?
+        data.each{|slot| adapter.sadd(to_notify_key, slot)}
         data = adapter.smembers(to_notify_key)
 
         if data.any?

@@ -56,12 +56,11 @@ describe AutomateAT::CourtEngine do
 
     describe "#courts_to_notify" do
       before(:each) do
-        @engine.save_courts({"Thursday, 21 Nov" => ["7:00am", "8:00pm"], "Friday, 22 Nov" => ["9:00pm"]})
+        @engine.save_courts({"Thursday, 21 Nov" => ["7:00am", "7:00pm", "8:00pm"], "Friday, 22 Nov" => ["9:00pm"]})
       end
 
       it "should only include times which the user wants to know about" do
-        @engine.courts_to_notify.should == {"Thursday, 21 Nov" => ["8:00pm"], "Friday, 22 Nov" => ["9:00pm"]}
-        @engine.courts_to_notify.should == {"Thursday, 21 Nov" => ["8:00pm"], "Friday, 22 Nov" => ["9:00pm"]}
+        @engine.courts_to_notify.should == {"Friday, 22 Nov" => ["9:00pm"], "Thursday, 21 Nov" => ["8:00pm", "7:00pm"]}
       end
 
       it "should not include times which have been notified recently" do
@@ -69,7 +68,7 @@ describe AutomateAT::CourtEngine do
         @engine.adapter.sadd("notified:Friday,-22-Nov:1", "9:00pm")
         @engine.adapter.sadd("notified:Thursday,-21-Nov", "notified:Thursday,-21-Nov:1")
         @engine.adapter.sadd("notified:Friday,-22-Nov", "notified:Friday,-22-Nov:1")
-        @engine.courts_to_notify.should == {}
+        @engine.courts_to_notify.should == {"Thursday, 21 Nov" => ["7:00pm"]} 
       end
     end
 
