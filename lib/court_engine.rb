@@ -36,7 +36,7 @@ module AutomateAT
 
         # keys to be used
         wanted_key = matching_wanted_key_for(availability)
-        AutomateAT::Bookit.logger.warn("Wanted key: #{wanted_key}"
+        AutomateAT::Bookit.logger.warn("Wanted key: #{wanted_key})"
         date = human_date_from_availability_key(availability)
         to_notify_key = key("to_notify", date)
         notified_keys = adapter.smembers(key("notified", date))
