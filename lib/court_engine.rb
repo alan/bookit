@@ -44,6 +44,7 @@ module AutomateAT
 
         adapter.sinterstore("found", availability, wanted_key)
 
+        AutomateAT::Bookit.logger.warn("Notified keys name: #{key('notified', date)}")
         notified_keys.each do |notified_key|
           AutomateAT::Bookit.logger.warn("Contents for #{notified_key}: #{adapter.smembers(notified_key).inspect}")
         end
@@ -69,6 +70,7 @@ module AutomateAT
         notified_key = key("notified", date, count)
         adapter.rename(key_name, notified_key)
         adapter.sadd(key("notified", date), notified_key)
+        AutomateAT::Bookit.logger.warn("Time expiration: #{time_expiration}")
         adapter.expire(notified_key, time_expiration)
       end
     end
